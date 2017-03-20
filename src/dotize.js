@@ -29,9 +29,9 @@ dotize.convert = function(obj, prefix) {
 
     function getFieldName(field, prefix, isRoot, isArrayItem, isArray) {
         if (isArray)
-            return (prefix ? prefix : "") + (isNumber(field) ? "[" + field + "]" : (isRoot ? "" : ".") + field);
+            return (prefix ? prefix : "") + (isRoot ? "" : ".") + field;
         else if (isArrayItem)
-            return (prefix ? prefix : "") + "[" + field + "]";
+            return (prefix ? prefix : "") + "." + field;
         else
             return (prefix ? prefix + "." : "") + field;
     }
